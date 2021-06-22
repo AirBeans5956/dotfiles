@@ -1,0 +1,40 @@
+[core]
+	excludesfile = $HOME/.gitignore_global
+	editor = vim
+	pager = less -R -S
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = AirBeans5956
+	email = AirBeans5956@users.noreply.github.com
+[pager]
+	branch = cat
+	stash = false
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = false
+[pull]
+	ff = only
+	ff = only
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	st = status -sb
+	stat = status
+	lg = log --branches --graph --oneline --remotes --pretty=format:'%C(yellow)%h%Creset [%cd] %C(cyan)<%an>%Creset %C(magenta)%d%Creset %s' --date=format:'%Y/%m/%d %H:%M:%S'
+	hs = "!git_hs() { git log --graph --oneline --pretty=format:'%C(yellow)%h%Creset [%cd] %C(cyan)<%an>%Creset %C(magenta)%d%Creset %s' --date=format:'%Y/%m/%d %H:%M:%S' $1; }; git_hs"
+	fa = fetch --all
+	sw = switch
+	swc = switch --no-track -c
+	amend = commit --amend
+	undo = reset --soft HEAD^
+	ignore = !curl -L -s https://www.gitignore.io/api/$@
+	br = branch -vv
+	graph = log --graph --date=short --pretty=format:'%Cblue%h %cd %Cgreen %cn%creset %s'
